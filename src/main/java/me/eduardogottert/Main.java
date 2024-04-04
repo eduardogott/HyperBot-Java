@@ -15,11 +15,6 @@ public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
 
     public final static String prefix = "!";
-    /**
-     * The entry point of the application.
-     * 
-     * @param args The command line arguments.
-     */
     public static void main(String[] args) {
         final String BOT_TOKEN = "MTIxNzYyMDAzNTI4MDA0NDE2Mg.GXnd7N.yp-qMYe-fQfJfAXQnEvpMBV2--gNSQzZEqxasE";
         
