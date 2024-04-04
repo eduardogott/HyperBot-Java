@@ -21,7 +21,7 @@ public class Main {
      * @param args The command line arguments.
      */
     public static void main(String[] args) {
-        final String BOT_TOKEN = "";
+        final String BOT_TOKEN = "MTIxNzYyMDAzNTI4MDA0NDE2Mg.GXnd7N.yp-qMYe-fQfJfAXQnEvpMBV2--gNSQzZEqxasE";
         
         DiscordApi api = new DiscordApiBuilder().setToken(BOT_TOKEN).setAllIntents().login().join();
         
