@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <File name="TraceFile" fileName="logs/debug.log" append="true">
+            <ThresholdFilter level="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        
+        <File name="InfoFile" fileName="logs/info.log" append="true">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %highlight{%-5level}{FATAL=magenta, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue} %logger{36} - %msg%n" disableAnsi="false"/>
+        </Console>
+    </Appenders>
+    
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="TraceFile" />
+            <AppenderRef ref="InfoFile" />
+        </Root>
+    </Loggers>
+</Configuration>

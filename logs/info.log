@@ -1,0 +1,427 @@
+2024-04-03 05:10:51 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:10:51 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:10:51 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:10:51 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:11:03 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:11:31 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !rado
+2024-04-03 05:11:36 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !hihi
+2024-04-03 05:13:41 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:13:41 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:13:41 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:13:41 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:14:14 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.DiceCommand - Command '!dice 294' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:14:14 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !dice
+2024-04-03 05:14:15 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Rolling
+2024-04-03 05:14:21 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !randomico
+2024-04-03 05:14:24 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:14:24 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:14:24 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:14:24 [Javacord - Central ExecutorService - 1] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:53) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:14:35 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:14:35 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:14:35 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:14:35 [Javacord - Central ExecutorService - 1] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:53) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:14:40 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.AboutCommand - Command '!about' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:14:40 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !about
+2024-04-03 05:14:40 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - 
+2024-04-03 05:15:12 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.DiceCommand - Command '!dice 99' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:15:12 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !dice
+2024-04-03 05:15:12 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Rolling
+2024-04-03 05:15:38 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:15:38 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:15:38 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 10 100' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:15:39 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Usage:
+2024-04-03 05:15:42 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:15:42 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:15:42 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 100' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:15:42 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - Usage:
+2024-04-03 05:15:48 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:15:48 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:15:48 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:15:48 [Javacord - Central ExecutorService - 3] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:53) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:16:32 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:16:32 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:16:32 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:16:32 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:17:47 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:17:47 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:17:47 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:17:47 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:18:22 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:18:22 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:18:22 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:18:22 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - 1
+2024-04-03 05:18:22 [Javacord - Central ExecutorService - 2] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:55) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:18:48 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:18:48 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:18:48 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:18:48 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - 2
+2024-04-03 05:18:49 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:19:23 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:19:23 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:19:23 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:19:23 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:19:33 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:19:33 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:19:33 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:19:33 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - 1
+2024-04-03 05:19:34 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:19:37 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:19:37 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:19:37 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:19:37 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - 1
+2024-04-03 05:19:37 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:19:49 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:19:49 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:19:49 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 12' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:19:49 [Javacord - Central ExecutorService - 3] WARN  me.eduardogottert.commands.utils.RandomCommand - 2
+2024-04-03 05:19:50 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:19:54 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:19:54 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:19:54 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 12 1000' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:19:54 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - 3
+2024-04-03 05:19:54 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Usage:
+2024-04-03 05:20:48 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:20:48 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:20:48 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 100 10' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:20:48 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - 3
+2024-04-03 05:20:48 [Javacord - Central ExecutorService - 2] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.IllegalArgumentException: bound must be positive
+	at jdk.internal.util.random.RandomSupport.checkBound(RandomSupport.java:188) ~[?:?]
+	at java.util.random.RandomGenerator.nextLong(RandomGenerator.java:712) ~[?:?]
+	at me.eduardogottert.commands.utils.RandomCommand.getRandomNumber(RandomCommand.java:22) ~[classes/:?]
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:64) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:21:18 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:21:18 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:21:18 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:21:18 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:21:32 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:21:32 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:21:32 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:21:32 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:21:34 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:21:34 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:21:34 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 100' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:21:34 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:21:34 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - 0
+2024-04-03 05:21:36 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:21:36 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:21:36 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 1000' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:21:37 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:11 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:11 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:11 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 1000' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:11 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:14 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:14 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:14 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 1000' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:15 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:15 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:15 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:15 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 1000' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:16 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:20 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:20 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:20 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 12391239' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:21 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:23 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:23 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:23 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 123941294' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:24 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:27 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:27 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:27 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 9123538125235' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:27 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - The
+2024-04-03 05:22:34 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:34 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:34 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 0 0' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:34 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Usage:
+2024-04-03 05:22:35 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:35 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:35 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 0 1' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:35 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:38 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:38 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:38 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 0 1' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:38 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:41 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:41 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:41 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 102450 120451295' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:41 [Javacord - Central ExecutorService - 1] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:22:43 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:43 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - !random
+2024-04-03 05:22:43 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 19 12394' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:22:44 [Javacord - Central ExecutorService - 2] WARN  me.eduardogottert.commands.utils.RandomCommand - Random
+2024-04-03 05:27:21 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:27:21 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:27:21 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:27:21 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:27:38 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 1000' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:27:38 [Javacord - Central ExecutorService - 3] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.IllegalArgumentException: bound must be positive
+	at jdk.internal.util.random.RandomSupport.checkBound(RandomSupport.java:188) ~[?:?]
+	at java.util.random.RandomGenerator.nextLong(RandomGenerator.java:712) ~[?:?]
+	at me.eduardogottert.commands.utils.RandomCommand.getRandomNumber(RandomCommand.java:22) ~[classes/:?]
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:69) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:28:17 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:28:17 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:28:17 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:28:17 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:28:29 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 1000' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:28:29 [Javacord - Central ExecutorService - 2] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.IllegalArgumentException: bound must be positive
+	at jdk.internal.util.random.RandomSupport.checkBound(RandomSupport.java:188) ~[?:?]
+	at java.util.random.RandomGenerator.nextLong(RandomGenerator.java:712) ~[?:?]
+	at me.eduardogottert.commands.utils.RandomCommand.getRandomNumber(RandomCommand.java:22) ~[classes/:?]
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:69) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:29:29 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:29:29 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:29:29 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:29:29 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:29:36 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 100' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:29:36 [Javacord - Central ExecutorService - 3] ERROR me.eduardogottert.commands.utils.RandomCommand - 1001
+2024-04-03 05:29:36 [Javacord - Central ExecutorService - 3] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.IllegalArgumentException: bound must be positive
+	at jdk.internal.util.random.RandomSupport.checkBound(RandomSupport.java:188) ~[?:?]
+	at java.util.random.RandomGenerator.nextLong(RandomGenerator.java:712) ~[?:?]
+	at me.eduardogottert.commands.utils.RandomCommand.getRandomNumber(RandomCommand.java:22) ~[classes/:?]
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:71) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:29:50 [Javacord - Central ExecutorService - 1] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 100 1' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:29:50 [Javacord - Central ExecutorService - 1] ERROR me.eduardogottert.commands.utils.RandomCommand - 1001
+2024-04-03 05:29:50 [Javacord - Central ExecutorService - 1] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.IllegalArgumentException: bound must be positive
+	at jdk.internal.util.random.RandomSupport.checkBound(RandomSupport.java:188) ~[?:?]
+	at java.util.random.RandomGenerator.nextLong(RandomGenerator.java:712) ~[?:?]
+	at me.eduardogottert.commands.utils.RandomCommand.getRandomNumber(RandomCommand.java:22) ~[classes/:?]
+	at me.eduardogottert.commands.utils.RandomCommand.onMessageCreate(RandomCommand.java:71) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 05:30:24 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:30:24 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:30:24 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:30:24 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:30:31 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 1000' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:30:31 [Javacord - Central ExecutorService - 2] ERROR me.eduardogottert.commands.utils.RandomCommand - 11000
+2024-04-03 05:30:35 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 19124 120412' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:30:35 [Javacord - Central ExecutorService - 3] ERROR me.eduardogottert.commands.utils.RandomCommand - 19124120412
+2024-04-03 05:30:38 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1000 12' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 05:30:38 [Javacord - Central ExecutorService - 2] ERROR me.eduardogottert.commands.utils.RandomCommand - 121000
+2024-04-03 05:31:15 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 05:31:15 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 05:31:15 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 05:31:15 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 05:31:35 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.RandomCommand - Command '!random 1 100' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:30:10 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 06:30:10 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 06:30:10 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 06:30:10 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 06:47:37 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 06:47:38 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 06:47:38 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 06:47:38 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 06:47:48 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choice between this, and this, fianlly this' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:47:55 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:47:56 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:47:58 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:48:00 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:50:36 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 06:50:36 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 06:50:36 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 06:50:36 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 06:50:41 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:50:42 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:50:43 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:50:45 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:50:46 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choose penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:51:27 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll first only options' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:51:55 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 06:51:55 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 06:51:55 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 06:51:55 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 06:52:18 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choice penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:52:19 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.ChoiceCommand - Command '!choice penis, dick' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:52:24 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste ohn' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 06:53:19 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste, batata, cuzinho' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:01:54 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:01:54 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:01:54 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:01:54 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:02:03 [Javacord - Central ExecutorService - 2] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.Error: Unresolved compilation problem: 
+	Invalid unicode
+
+	at me.eduardogottert.commands.utils.PollCommand.onMessageCreate(PollCommand.java:90) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 07:03:07 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:03:07 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:03:07 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:03:07 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:03:24 [Javacord - Central ExecutorService - 3] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.Error: Unresolved compilation problem: 
+	Invalid unicode
+
+	at me.eduardogottert.commands.utils.PollCommand.onMessageCreate(PollCommand.java:87) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 07:07:20 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:07:20 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:07:20 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:07:20 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:07:38 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll penis, dick, xereca' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:08:33 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:08:33 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:08:33 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:08:33 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:08:44 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll penis, dick, big black cock, xereca, buceta' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:09:13 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:09:13 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:09:13 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:09:13 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:09:21 [Javacord - Central ExecutorService - 2] ERROR org.javacord.core.util.event.EventDispatcherBase - Unhandled exception in a listener thread for HyperBot Java!
+java.lang.Error: Unresolved compilation problem: 
+	Invalid escape sequence (valid ones are  \b  \t  \n  \f  \r  \"  \'  \\ )
+
+	at me.eduardogottert.commands.utils.PollCommand.onMessageCreate(PollCommand.java:73) ~[classes/:?]
+	at org.javacord.core.util.event.EventDispatcher.lambda$dispatchMessageCreateEvent$272(EventDispatcher.java:9168) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$dispatchEvent$12(EventDispatcherBase.java:215) ~[javacord-core-3.8.0.jar:?]
+	at org.javacord.core.util.event.EventDispatcherBase.lambda$checkRunningListenersAndStartIfPossible$20(EventDispatcherBase.java:289) ~[javacord-core-3.8.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) [?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) [?:?]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2024-04-03 07:09:53 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:09:53 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:09:53 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:09:53 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:09:55 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll penis, dick, big black cock, xereca, buceta' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:11:08 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:11:08 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:11:08 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:11:08 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:11:10 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll uma opcao agora caralho vamo ve' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:13:31 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:13:31 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:13:31 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:13:31 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:13:37 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll BODAO FCEGRO' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:13:40 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!POLL BODAO FCEGRO' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:14:12 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:15:36 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:15:36 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:15:36 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:15:36 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:15:41 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll um, dois, tres, quatro, cinco, seis, sete, oito, nove' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:15:48 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll um, dois, tres, quatro, cinco, seis, sete, oito, nove, dez' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:15:52 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:16:30 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:16:30 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:16:30 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:16:30 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:16:32 [Javacord - Central ExecutorService - 2] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!POLL' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:16:40 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste, vai toamr no cu, zorba --e' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:16:45 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste, vai toamr no cu, zorba --everyone' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:17:20 [me.eduardogottert.Main.main()] WARN  me.eduardogottert.Main - Logged in as HyperBot Java
+2024-04-03 07:17:20 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Client ID (1217620035280044162)
+2024-04-03 07:17:20 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - https://discord.com/oauth2/authorize?client_id=1217620035280044162&scope=bot%20applications.commands&permissions=8&prompt=consent
+2024-04-03 07:17:20 [me.eduardogottert.Main.main()] INFO  me.eduardogottert.Main - Currently in 1 guild(s): [Server (id: 1217619932661940274, name: HyperBot Java)]
+2024-04-03 07:18:31 [Javacord - Central ExecutorService - 3] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste, vai toamr no cu, zorba --everyone' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:18:35 [Javacord - Central ExecutorService - 4] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste, vai toamr no cu, zorba --HERE' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:18:40 [Javacord - Central ExecutorService - 4] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste, vai toamr no cu, zorba -e' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:18:42 [Javacord - Central ExecutorService - 4] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste, vai toamr no cu, zorba -' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 07:18:45 [Javacord - Central ExecutorService - 4] INFO  me.eduardogottert.commands.utils.PollCommand - Command '!poll teste, vai toamr no cu, zorba -H' executed by hyperxzy_ (710164157235855491) at #geral (1217619932661940278)
+2024-04-03 09:13:47 [ReadingThread] INFO  org.javacord.core.util.gateway.DiscordWebSocketAdapter - Websocket closed with reason 'Discord commanded a reconnect (Received opcode 7)' and code COMMANDED_RECONNECT (4999) by client!
+2024-04-03 09:13:47 [ReadingThread] INFO  org.javacord.core.util.gateway.DiscordWebSocketAdapter - Trying to reconnect/resume in 1 seconds!
+2024-04-03 11:03:13 [ReadingThread] INFO  org.javacord.core.util.gateway.DiscordWebSocketAdapter - Websocket closed with reason 'Discord commanded a reconnect (Received opcode 7)' and code COMMANDED_RECONNECT (4999) by client!
+2024-04-03 11:03:13 [ReadingThread] INFO  org.javacord.core.util.gateway.DiscordWebSocketAdapter - Trying to reconnect/resume in 1 seconds!
