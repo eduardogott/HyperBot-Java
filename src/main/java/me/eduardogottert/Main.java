@@ -15,8 +15,8 @@ public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
 
     public final static String prefix = "!";
+    private static final String BOT_TOKEN = "MTIxNzYyMDAzNTI4MDA0NDE2Mg.GXnd7N.yp-qMYe-fQfJfAXQnEvpMBV2--gNSQzZEqxasE";
     public static void main(String[] args) {
-        final String BOT_TOKEN = "MTIxNzYyMDAzNTI4MDA0NDE2Mg.GXnd7N.yp-qMYe-fQfJfAXQnEvpMBV2--gNSQzZEqxasE";
         
         DiscordApi api = new DiscordApiBuilder().setToken(BOT_TOKEN).setAllIntents().login().join();
         
@@ -27,6 +27,7 @@ public class Main {
         logger.info(api.createBotInvite(Permissions.fromBitmask(8)));
         logger.info("Currently in " + guilds.size() + " guild(s): " + guilds);
         
+        // Utils commands
         api.addMessageCreateListener(new AboutCommand());
         api.addMessageCreateListener(new ChoiceCommand());
         api.addMessageCreateListener(new DiceCommand());
@@ -34,6 +35,8 @@ public class Main {
         api.addMessageCreateListener(new PingCommand());
         api.addMessageCreateListener(new PollCommand());
         api.addMessageCreateListener(new RandomCommand());
+        api.addMessageCreateListener(new ShortenCommand());
+        //todo Wheater Command, Time Command, Translate Command and more
     }
 
     public static boolean parseCommand(String[] aliases, String commandExecuted) {
