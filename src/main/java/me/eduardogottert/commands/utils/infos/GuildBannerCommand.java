@@ -36,6 +36,12 @@ public class GuildBannerCommand implements MessageCreateListener {
         .thenApply(HttpResponse::body)
         .thenAccept(body -> {
             JSONObject serverJson = new JSONObject(body);
+
+            if (!serverJson.has("banner") || serverJson.isNull("banner")) {
+                finalBannerUrl[0] = null;
+                return;
+            }
+
             String bannerHash = serverJson.getString("banner");
             finalBannerUrl[0] = (bannerHash != null) ? "https://cdn.discordapp.com/banners/" + serverId + "/" + bannerHash + ".png?size=512" : null;
         })
@@ -66,9 +72,10 @@ public class GuildBannerCommand implements MessageCreateListener {
         }
 
         EmbedBuilder embed = new EmbedBuilder()
-            .setTitle(event.getMessage().getChannel().asServerTextChannel().get().getServer().getName() + " banner")
+            .setTitle(event.getMessage().getChannel().asServerTextChannel().get().getServer().getName() + " banner (Click to download)")
             .setImage(bannerUrl)
             .setColor(PURPLE)
+            .setUrl(bannerUrl)
             .setFooter("Command executed by " + executor);
 
         event.getChannel().sendMessage(embed).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));

@@ -38,6 +38,8 @@ public class Main {
 
         // Info Commands
         api.addMessageCreateListener(new AvatarCommand());
+        api.addMessageCreateListener(new GuildBannerCommand());
+        api.addMessageCreateListener(new GuildIconCommand());
         api.addMessageCreateListener(new UserBannerCommand());
 
         // Utils Commands

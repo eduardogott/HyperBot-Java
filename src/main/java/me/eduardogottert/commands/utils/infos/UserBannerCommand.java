@@ -37,8 +37,16 @@ public class UserBannerCommand implements MessageCreateListener {
         .thenApply(HttpResponse::body)
         .thenAccept(body -> {
             JSONObject userJson = new JSONObject(body);
+
+            if (!userJson.has("banner") || userJson.isNull("banner")) {
+                finalBannerUrl[0] = null;
+                return;
+            }
+
             String bannerHash = userJson.getString("banner");
-            finalBannerUrl[0] = (bannerHash != null) ? "https://cdn.discordapp.com/banners/" + userId + "/" + bannerHash + ".png?size=512" : null; // Assign the value to the mutable array
+            String bannerExtension = (bannerHash.startsWith("a_")) ? ".gif?size=1024" : ".png?size=1024"; // Checks whether the banner is a gif, animated or not
+
+            finalBannerUrl[0] = (bannerHash != null) ? "https://cdn.discordapp.com/banners/" + userId + "/" + bannerHash + bannerExtension : null;
         })
         .join();
 
@@ -88,9 +96,10 @@ public class UserBannerCommand implements MessageCreateListener {
         }
 
         EmbedBuilder embed = new EmbedBuilder()
-            .setTitle(event.getMessageAuthor().asUser().toString() + "'s banner")
+            .setTitle(user.getName() + "'s banner (Click to download)")
             .setImage(bannerUrl)
             .setColor(PURPLE)
+            .setUrl(bannerUrl)
             .setFooter("Command executed by " + executor);
 
         event.getChannel().sendMessage(embed).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));

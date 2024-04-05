@@ -55,10 +55,16 @@ public class AvatarCommand implements MessageCreateListener {
 
         String avatarUrl = user.getAvatar().getUrl().toString();
 
+        if (avatarUrl == null) {
+            event.getChannel().sendMessage("This user doesn't have an avatar").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+            return;
+        }
+
         EmbedBuilder embed = new EmbedBuilder()
-            .setTitle(event.getMessageAuthor().asUser().toString() + "'s avatar")
+            .setTitle(user.getName() + "'s avatar (Click to download)")
             .setImage(avatarUrl)
             .setColor(PURPLE)
+            .setUrl(avatarUrl)
             .setFooter("Command executed by " + executor);
 
         event.getChannel().sendMessage(embed);
