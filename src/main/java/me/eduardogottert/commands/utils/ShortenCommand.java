@@ -13,14 +13,19 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import me.eduardogottert.Main;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
+import me.eduardogottert.Main;
 
 public class ShortenCommand implements MessageCreateListener {
 
     private static Logger logger = LogManager.getLogger(ShortenCommand.class);
     private static String[] aliases = {"shorten", "tinyurl", "shorturl", "shortener", "urlshortener", "urlshorten"};
     private static String usage = "Usage: !shorten {url}";
+    private static final long COMMAND_COOLDOWN = TimeUnit.SECONDS.toMillis(60);
+    private Map<Long, Long> userLastCommandTime = new HashMap<>();
 
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
@@ -40,6 +45,11 @@ public class ShortenCommand implements MessageCreateListener {
             return;
         }
 
+        if (userLastCommandTime.containsKey(event.getMessageAuthor().getId()) && System.currentTimeMillis() - userLastCommandTime.get(event.getMessageAuthor().getId()) < COMMAND_COOLDOWN) {
+            event.getChannel().sendMessage("You are on cooldown. Please wait" + (System.currentTimeMillis() - userLastCommandTime.get(event.getMessageAuthor().getId()))/1000 + "seconds before using this command again.").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+            return;
+        }
+
         String url = splitCommand[1];
         String regex = "^(http(s)?://)?([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?$";
 
@@ -47,7 +57,6 @@ public class ShortenCommand implements MessageCreateListener {
             event.getChannel().sendMessage("Invalid URL").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
             return;
         }
-
 
         String tinyUrl = "https://tinyurl.com/api-create.php?url=" + url;
 
@@ -69,5 +78,7 @@ public class ShortenCommand implements MessageCreateListener {
         } catch (IOException e) {
             event.getChannel().sendMessage("Failed to connect to the TinyURL API").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
         }
+
+        userLastCommandTime.put(event.getMessageAuthor().getId(), System.currentTimeMillis());
     }
 }

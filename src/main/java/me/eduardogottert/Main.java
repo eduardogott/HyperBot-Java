@@ -6,6 +6,9 @@ import org.javacord.api.entity.permission.Permissions;
 import org.javacord.api.entity.server.Server;
 
 import me.eduardogottert.commands.utils.*;
+import me.eduardogottert.commands.utils.infos.*;
+import me.eduardogottert.commands.utils.rngs.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,7 +18,7 @@ public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
 
     public final static String prefix = "!";
-    private static final String BOT_TOKEN = "MTIxNzYyMDAzNTI4MDA0NDE2Mg.GXnd7N.yp-qMYe-fQfJfAXQnEvpMBV2--gNSQzZEqxasE";
+    public static final String BOT_TOKEN = "MTIxNzYyMDAzNTI4MDA0NDE2Mg.GXnd7N.yp-qMYe-fQfJfAXQnEvpMBV2--gNSQzZEqxasE";
     public static void main(String[] args) {
         
         DiscordApi api = new DiscordApiBuilder().setToken(BOT_TOKEN).setAllIntents().login().join();
@@ -27,14 +30,20 @@ public class Main {
         logger.info(api.createBotInvite(Permissions.fromBitmask(8)));
         logger.info("Currently in " + guilds.size() + " guild(s): " + guilds);
         
-        // Utils commands
-        api.addMessageCreateListener(new AboutCommand());
+        // RNG Commands
         api.addMessageCreateListener(new ChoiceCommand());
         api.addMessageCreateListener(new DiceCommand());
         api.addMessageCreateListener(new JankenponCommand());
+        api.addMessageCreateListener(new RandomCommand());
+
+        // Info Commands
+        api.addMessageCreateListener(new AvatarCommand());
+        api.addMessageCreateListener(new UserBannerCommand());
+
+        // Utils Commands
+        api.addMessageCreateListener(new AboutCommand());
         api.addMessageCreateListener(new PingCommand());
         api.addMessageCreateListener(new PollCommand());
-        api.addMessageCreateListener(new RandomCommand());
         api.addMessageCreateListener(new ShortenCommand());
         //todo Wheater Command, Time Command, Translate Command and more
     }

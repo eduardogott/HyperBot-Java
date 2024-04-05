@@ -1,4 +1,4 @@
-package me.eduardogottert.commands.utils;
+package me.eduardogottert.commands.utils.rngs;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package me.eduardogottert.commands.utils;
+package me.eduardogottert.commands.utils.rngs;
 
 import java.util.Random;
 
@@ -11,11 +11,11 @@ import org.javacord.api.util.logging.ExceptionLogger;
 
 import me.eduardogottert.Main;
 
-public class DiceCommand implements MessageCreateListener {
+public class RandomCommand implements MessageCreateListener {
 
-    private static Logger logger = LogManager.getLogger(DiceCommand.class);
-    private static String[] aliases = {"dice", "roll"};
-    private static String usage = "Usage: !dice {size}";
+    private static Logger logger = LogManager.getLogger(RandomCommand.class);
+    private static String usage = "Usage: !random {min} {max}";
+    private static String[] aliases = {"random"};
     
     private static long getRandomNumber(long min, long max) {
         Random random = new Random();
@@ -25,7 +25,7 @@ public class DiceCommand implements MessageCreateListener {
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
         String[] splitCommand = event.getMessageContent().split("\\s+");
-        
+
         if (!Main.parseCommand(aliases, splitCommand[0])) {
             return;
         }
@@ -33,32 +33,46 @@ public class DiceCommand implements MessageCreateListener {
         String content = event.getMessageContent();
         String executor = event.getMessageAuthor().asUser().orElse(null) != null ? event.getMessageAuthor().asUser().orElse(null).getName() + " (" + event.getMessageAuthor().asUser().orElse(null).getId() + ")" : "Unknown User";
         String channel = event.getChannel().asServerTextChannel().isPresent() ? event.getChannel().asServerTextChannel().get().getName() + " (" + event.getChannel().asServerTextChannel().get().getId() + ")" : "Unknown Channel";
+        
         long result;
-        long number;
+        long[] numbers;
 
         logger.info("Command '" + content + "' executed by " + executor + " at #" + channel); 
 
-        if (splitCommand.length < 2) {
-            result = getRandomNumber(1, 6);
-            event.getChannel().sendMessage("Rolling a D6... " + result).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+        if (splitCommand.length != 3) {
+            result = getRandomNumber(1, 100);
+            event.getChannel().sendMessage("Random number between 1 and 100... " + result).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
             return;
 
         } else {
             try {
-                number = Long.parseLong(splitCommand[1]);
+                numbers = new long[]{Long.parseLong(splitCommand[1]), Long.parseLong(splitCommand[2])};
             } catch (NumberFormatException e) {
                 event.getChannel().sendMessage(usage).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
                 return;
             }
 
-            if (number >= 2 && number <= 10000) {
-                result = getRandomNumber(1, number);
-                event.getChannel().sendMessage("Rolling a D" + number + "..." + result).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+            if (numbers[0] >= 0 && numbers[0] <= Integer.MAX_VALUE &&
+            numbers[1] >= 0 && numbers[1] <= Integer.MAX_VALUE) {
+
+                long minNumber;
+                long maxNumber;
+
+                if (numbers[1] > numbers[0]) {
+                    minNumber = numbers[0];
+                    maxNumber = numbers[1];
+                } else {
+                    minNumber = numbers[1];
+                    maxNumber = numbers[0];          
+                }
+
+                result = getRandomNumber(minNumber, maxNumber);
+                event.getChannel().sendMessage("Random number between " + minNumber + " and " + maxNumber + "... " + result).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
                 return;
-                
+
             } else {
-            event.getChannel().sendMessage("The number is out of range! (Range: 2-10000)").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
-            return;
+                event.getChannel().sendMessage("The numbers are out of range! (Range: 0-" + Integer.MAX_VALUE + ")").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+                return;
             }
         }       
     }
