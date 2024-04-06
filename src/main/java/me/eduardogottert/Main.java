@@ -1,3 +1,5 @@
+// TODO make so all of the getUserByName and by Discriminator works even if the user is not in the server
+
 package me.eduardogottert;
 
 import org.javacord.api.DiscordApi;
@@ -56,6 +58,7 @@ public class Main {
         api.addMessageCreateListener(new GuildBannerCommand());
         api.addMessageCreateListener(new GuildIconCommand());
         api.addMessageCreateListener(new UserBannerCommand());
+        api.addMessageCreateListener(new UserInfoCommand());
 
         // Utils Commands
         api.addMessageCreateListener(new AboutCommand());

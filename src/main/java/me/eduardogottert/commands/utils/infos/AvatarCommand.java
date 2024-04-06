@@ -44,12 +44,15 @@ public class AvatarCommand implements MessageCreateListener {
                 user = event.getApi().getUserById(userId).join();
             } else if (userToGetAvatar.matches("\\d+")) {
                 user = event.getApi().getUserById(userToGetAvatar).join();
-            } else {
+            } else if (userToGetAvatar.matches("^(.{2,32})#([0-9]{4})$")){
                 user = event.getApi().getCachedUserByDiscriminatedName(userToGetAvatar).orElse(null);
-                if (user == null) {
-                    event.getChannel().sendMessage("Invalid user").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
-                    return;
-                }
+            } else {
+                user = event.getApi().getCachedUserByNameAndDiscriminator(userToGetAvatar, "0").orElse(null);
+            }
+
+            if (user == null) {
+                event.getChannel().sendMessage("Invalid user").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+                return;
             }
         }
 
