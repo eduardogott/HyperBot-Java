@@ -79,12 +79,15 @@ public class UserBannerCommand implements MessageCreateListener {
                 user = event.getApi().getUserById(userId).join();
             } else if (userToGetBanner.matches("\\d+")) {
                 user = event.getApi().getUserById(userToGetBanner).join();
-            } else {
+            } else if (userToGetBanner.matches("^(.{2,32})#([0-9]{4})$")){
                 user = event.getApi().getCachedUserByDiscriminatedName(userToGetBanner).orElse(null);
-                if (user == null) {
-                    event.getChannel().sendMessage("Invalid user").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
-                    return;
-                }
+            } else {
+                user = event.getApi().getCachedUserByNameAndDiscriminator(userToGetBanner, "0").orElse(null);
+            }
+
+            if (user == null) {
+                event.getChannel().sendMessage("Invalid user").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+                return;
             }
         }
 
