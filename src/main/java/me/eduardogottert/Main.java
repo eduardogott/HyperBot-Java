@@ -13,14 +13,29 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Collection;
-
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
 
     public final static String prefix = "!";
-    public static final String BOT_TOKEN = "MTIxNzYyMDAzNTI4MDA0NDE2Mg.GXnd7N.yp-qMYe-fQfJfAXQnEvpMBV2--gNSQzZEqxasE";
+    public static String BOT_TOKEN;    
     public static void main(String[] args) {
         
+        Properties prop = new Properties();
+        try (InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties")) {
+            prop.load(input);
+            BOT_TOKEN = prop.getProperty("BOT_TOKEN");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (BOT_TOKEN == null) {
+            logger.fatal("BOT_TOKEN is null. Please check your config.properties file.");
+            return;
+        }
+
         DiscordApi api = new DiscordApiBuilder().setToken(BOT_TOKEN).setAllIntents().login().join();
         
         Collection<Server> guilds = api.getServers();
