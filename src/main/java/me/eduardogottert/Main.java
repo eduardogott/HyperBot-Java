@@ -1,4 +1,5 @@
 // TODO make so all of the getUserByName and by Discriminator works even if the user is not in the server
+// TODO make so all of the embeds' footer containing "executed by" have that mini picture of the executor user
 
 package me.eduardogottert;
 
