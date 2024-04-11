@@ -1,5 +1,5 @@
 // TODO make so all of the getUserByName and by Discriminator works even if the user is not in the server
-
+// TODO do something with igdb and fx rates
 package me.eduardogottert;
 
 import org.javacord.api.DiscordApi;

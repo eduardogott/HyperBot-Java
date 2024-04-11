@@ -103,11 +103,11 @@ public class UserInfoCommand implements MessageCreateListener {
 
         EmbedBuilder embed = new EmbedBuilder()
             .setTitle(displayName + "'s info")
-            .addField("Discord Name", name + ((discriminator != null && discriminator != "0") ? "" : "#" + discriminator), true)
-            .addField("Discord ID", id, true)
-            .addField("Creation Date", creationDay + "/" + creationMonth + "/" + creationYear + " " + creationHour + ":" + creationMinute + ":" + creationSecond, true)
-            .addField("Join Date", ((joinDate.isPresent()) ? joinDay + "/" + joinMonth + "/" + joinYear + " " + joinHour + ":" + joinMinute + ":" + joinSecond : "Hasn't joined this guild"), true)
-            .addField("Highest Role", highestRole, true)
+            .addField(":label: Discord Name", name + ((discriminator != null && discriminator != "0") ? "" : "#" + discriminator), true)
+            .addField(":id: Discord ID", id, true)
+            .addField(":calendar: Creation Date", creationDay + "/" + creationMonth + "/" + creationYear + " " + creationHour + ":" + creationMinute + ":" + creationSecond, true)
+            .addField(":stopwatch: Join Date", ((joinDate.isPresent()) ? joinDay + "/" + joinMonth + "/" + joinYear + " " + joinHour + ":" + joinMinute + ":" + joinSecond : "Hasn't joined this guild"), true)
+            .addField(":beginner: Highest Role", highestRole, true)
             .setImage(avatarUrl)
             .setColor(PURPLE)
             .setFooter("Command executed by " + executor);
