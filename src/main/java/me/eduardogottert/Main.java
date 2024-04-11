@@ -1,5 +1,6 @@
 // TODO make so all of the getUserByName and by Discriminator works even if the user is not in the server
-// TODO do something with igdb and fx rates
+// TODO do something with igdb and fx rate
+// TODO make so all of the embeds' footer containing "executed by" have that mini picture of the executor user
 package me.eduardogottert;
 
 import org.javacord.api.DiscordApi;
