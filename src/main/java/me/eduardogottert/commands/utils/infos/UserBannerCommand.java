@@ -102,8 +102,17 @@ public class UserBannerCommand implements MessageCreateListener {
             .setTitle(user.getName() + "'s banner (Click to download)")
             .setImage(bannerUrl)
             .setColor(PURPLE)
-            .setUrl(bannerUrl)
-            .setFooter("Command executed by " + executor);
+            .setUrl(bannerUrl);
+
+        User executorUser = event.getMessageAuthor().asUser().orElse(null);
+        String executorAvatarUrl = executorUser != null ? executorUser.getAvatar().getUrl().toString() : null;
+              
+        if (executorAvatarUrl != null) {
+            embed.setFooter("Command executed by" + executor, executorAvatarUrl);
+        } else {
+            embed.setFooter("Command executed by" + executor);
+        }
+        
 
         event.getChannel().sendMessage(embed).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
     }

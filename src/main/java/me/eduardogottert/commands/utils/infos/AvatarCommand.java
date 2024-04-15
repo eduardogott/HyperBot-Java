@@ -67,9 +67,17 @@ public class AvatarCommand implements MessageCreateListener {
             .setTitle(user.getName() + "'s avatar (Click to download)")
             .setImage(avatarUrl)
             .setColor(PURPLE)
-            .setUrl(avatarUrl)
-            .setFooter("Command executed by " + executor);
+            .setUrl(avatarUrl);
 
+        User executorUser = event.getMessageAuthor().asUser().orElse(null);
+        String executorAvatarUrl = executorUser != null ? executorUser.getAvatar().getUrl().toString() : null;
+                
+        if (executorAvatarUrl != null) {
+            embed.setFooter("Command executed by" + executor, executorAvatarUrl);
+        } else {
+            embed.setFooter("Command executed by" + executor);
+        }
+            
         event.getChannel().sendMessage(embed);
     }
 }

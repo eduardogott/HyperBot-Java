@@ -10,6 +10,7 @@ import org.javacord.api.util.logging.ExceptionLogger;
 import java.awt.Color;
 import java.util.Optional;
 import org.javacord.api.entity.Icon;
+import org.javacord.api.entity.user.User;
 
 import me.eduardogottert.Main;
 
@@ -46,8 +47,17 @@ public class GuildIconCommand implements MessageCreateListener {
             .setTitle(event.getMessage().getChannel().asServerTextChannel().get().getServer().getName() + " icon (Click to download)")
             .setImage(iconUrl)
             .setColor(PURPLE)
-            .setUrl(iconUrl)
-            .setFooter("Command executed by " + executor);
+            .setUrl(iconUrl);
+
+        User executorUser = event.getMessageAuthor().asUser().orElse(null);
+        String executorAvatarUrl = executorUser != null ? executorUser.getAvatar().getUrl().toString() : null;
+                
+        if (executorAvatarUrl != null) {
+            embed.setFooter("Command executed by" + executor, executorAvatarUrl);
+        } else {
+            embed.setFooter("Command executed by" + executor);
+        }
+            
 
         event.getChannel().sendMessage(embed).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
     }

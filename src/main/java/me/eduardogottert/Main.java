@@ -1,6 +1,9 @@
 // TODO make so all of the getUserByName and by Discriminator works even if the user is not in the server
-// TODO do something with igdb and fx rate
+// TODO do something with "igdb", "open weather api" and "fx rates"
 // TODO make so all of the embeds' footer containing "executed by" have that mini picture of the executor user
+// TODO uma roleta tipo wheel of names
+
+//
 package me.eduardogottert;
 
 import org.javacord.api.DiscordApi;
@@ -21,9 +24,9 @@ import java.io.InputStream;
 import java.util.Properties;
 public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
-
     public final static String prefix = "!";
-    public static String BOT_TOKEN;    
+    public static String BOT_TOKEN;
+
     public static void main(String[] args) {
         
         Properties prop = new Properties();
@@ -58,6 +61,7 @@ public class Main {
         api.addMessageCreateListener(new AvatarCommand());
         api.addMessageCreateListener(new GuildBannerCommand());
         api.addMessageCreateListener(new GuildIconCommand());
+        api.addMessageCreateListener(new GuildInfoCommand());
         api.addMessageCreateListener(new UserBannerCommand());
         api.addMessageCreateListener(new UserInfoCommand());
 

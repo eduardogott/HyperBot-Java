@@ -7,6 +7,7 @@ import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.exception.MissingPermissionsException;
 import org.javacord.api.listener.message.MessageCreateListener;
 import org.javacord.api.util.logging.ExceptionLogger;
+import org.javacord.api.entity.user.User;
 import org.json.JSONObject;
 import java.awt.Color;
 
@@ -75,9 +76,17 @@ public class GuildBannerCommand implements MessageCreateListener {
             .setTitle(event.getMessage().getChannel().asServerTextChannel().get().getServer().getName() + " banner (Click to download)")
             .setImage(bannerUrl)
             .setColor(PURPLE)
-            .setUrl(bannerUrl)
-            .setFooter("Command executed by " + executor);
+            .setUrl(bannerUrl);
 
+        User executorUser = event.getMessageAuthor().asUser().orElse(null);
+        String executorAvatarUrl = executorUser != null ? executorUser.getAvatar().getUrl().toString() : null;
+                
+        if (executorAvatarUrl != null) {
+            embed.setFooter("Command executed by" + executor, executorAvatarUrl);
+        } else {
+            embed.setFooter("Command executed by" + executor);
+        }
+            
         event.getChannel().sendMessage(embed).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
     }
 }

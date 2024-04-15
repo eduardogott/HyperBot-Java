@@ -1,5 +1,3 @@
-//TODO Create a "roles" subcommand
-
 package me.eduardogottert.commands.utils.infos;
 
 import org.apache.logging.log4j.LogManager;
@@ -12,12 +10,13 @@ import org.javacord.api.entity.user.User;
 import org.javacord.api.entity.permission.Role;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import java.time.Instant;
-import java.time.format.DateTimeFormatter;
-import java.time.ZoneId;
 import java.util.Optional;
 import java.util.List;
 import java.awt.Color;
 
+import me.eduardogottert.discordUtils.DiscordTimestamp.Format;
+import me.eduardogottert.discordUtils.DiscordTimestamp;
+import me.eduardogottert.discordUtils.Markdown;
 import me.eduardogottert.Main;
 
 public class UserInfoCommand implements MessageCreateListener {
@@ -25,12 +24,6 @@ public class UserInfoCommand implements MessageCreateListener {
     private static Logger logger = LogManager.getLogger(UserInfoCommand.class);
     private static String[] aliases = {"userinfo"};
     private static final Color PURPLE = new Color(128, 0, 128);
-    DateTimeFormatter formatterDay = DateTimeFormatter.ofPattern("dd").withZone(ZoneId.systemDefault());
-    DateTimeFormatter formatterMonth = DateTimeFormatter.ofPattern("MM").withZone(ZoneId.systemDefault());
-    DateTimeFormatter formatterYear = DateTimeFormatter.ofPattern("yyyy").withZone(ZoneId.systemDefault());
-    DateTimeFormatter formatterHour = DateTimeFormatter.ofPattern("HH").withZone(ZoneId.systemDefault());
-    DateTimeFormatter formatterMinute = DateTimeFormatter.ofPattern("mm").withZone(ZoneId.systemDefault());
-    DateTimeFormatter formatterSecond = DateTimeFormatter.ofPattern("ss").withZone(ZoneId.systemDefault());
 
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
@@ -47,7 +40,8 @@ public class UserInfoCommand implements MessageCreateListener {
 
         User user;
 
-        if (splitCommand.length == 1) {
+        if ((splitCommand.length == 1) || 
+            (splitCommand.length >= 2 && splitCommand[1].equalsIgnoreCase("roles"))) {
             String userToGetAvatar = event.getMessageAuthor().getIdAsString();
             user = event.getApi().getUserById(userToGetAvatar).join();
         } else {
@@ -70,49 +64,51 @@ public class UserInfoCommand implements MessageCreateListener {
             }
         }
 
-        if (splitCommand.length == 2 || !splitCommand[2].equalsIgnoreCase("roles")) {
+        if ((splitCommand.length == 1) ||
+            (splitCommand.length == 2 && !splitCommand[1].equalsIgnoreCase("roles")) ||
+            (splitCommand.length >= 3 && !splitCommand[2].equalsIgnoreCase("roles"))) {
             String displayName = user.getDisplayName(event.getServer().orElse(null));
             String avatarUrl = user.getAvatar(1024).getUrl().toString();
             String id = user.getIdAsString();
             String name = user.getName();
             String discriminator = user.getDiscriminator();
 
-            Instant creationDate = user.getCreationTimestamp();
-            String creationDay = formatterDay.format(creationDate);
-            String creationMonth = formatterMonth.format(creationDate);
-            String creationYear = formatterYear.format(creationDate);
-            String creationHour = formatterHour.format(creationDate);
-            String creationMinute = formatterMinute.format(creationDate);
-            String creationSecond = formatterSecond.format(creationDate);
+            long creationDateEpoch = user.getCreationTimestamp().getEpochSecond();
+            String creationDate = DiscordTimestamp.getTimestamp(Format.SHORT_DATE_TIME, creationDateEpoch);
 
-            Optional<Instant> joinDate = user.getJoinedAtTimestamp(event.getServer().orElse(null));
-            String joinDay = joinDate.isPresent() ? formatterDay.format(joinDate.get()) : null;
-            String joinMonth = joinDate.isPresent() ? formatterMonth.format(joinDate.get()) : null;
-            String joinYear = joinDate.isPresent() ? formatterYear.format(joinDate.get()) : null;
-            String joinHour = joinDate.isPresent() ? formatterHour.format(joinDate.get()) : null;
-            String joinMinute = joinDate.isPresent() ? formatterMinute.format(joinDate.get()) : null;
-            String joinSecond = joinDate.isPresent() ? formatterSecond.format(joinDate.get()) : null;
+            Optional<Instant> joinDateTimestamp = user.getJoinedAtTimestamp(event.getServer().orElse(null));
+            long joinDateEpoch = joinDateTimestamp.isPresent() ? joinDateTimestamp.get().getEpochSecond() : 0;
+            String joinDate = joinDateEpoch != 0 ? DiscordTimestamp.getTimestamp(Format.SHORT_DATE_TIME, joinDateEpoch) : "Hasn't joined this guild";
 
             List<Role> userRoles = user.getRoles(event.getServer().orElse(null));
             String highestRole;
 
-            if (userRoles.isEmpty() || userRoles.get(0).getName().equals("@everyone")) {
+            if (userRoles.isEmpty() || (userRoles.get(0).getName().equals("@everyone") && userRoles.size() == 1)) {
                 highestRole = "User doesn't have any role";
             } else {
-                highestRole = userRoles.get(0).getName();
+                highestRole = userRoles.get(userRoles.size()-1).getMentionTag();
             }
 
             EmbedBuilder embed = new EmbedBuilder()
-                .setTitle(displayName + "'s info")
-                .addField("Discord Name", name + ((discriminator != null && discriminator != "0") ? "" : "#" + discriminator), true)
-                .addField("Discord ID", id, true)
-                .addField("Creation Date", creationDay + "/" + creationMonth + "/" + creationYear + " " + creationHour + ":" + creationMinute + ":" + creationSecond, true)
-                .addField("Join Date", ((joinDate.isPresent()) ? joinDay + "/" + joinMonth + "/" + joinYear + " " + joinHour + ":" + joinMinute + ":" + joinSecond : "Hasn't joined this guild"), true)
-                .addField("Highest Role", highestRole, true)
-                .setImage(avatarUrl)
-                .setColor(PURPLE)
-                .setFooter("Command executed by " + executor);
-            
+                .setTitle(":crown: " + displayName + "'s info")
+                .addField(":label: Discord Name", Markdown.code(name + ((discriminator != null && discriminator != "0") ? "" : "#" + discriminator)), true)
+                .addField(":id: Discord ID", Markdown.code(id), true)
+                .addField(":calendar: Creation Date", creationDate, true)
+                .addField(":stopwatch: Join Date", joinDate, true)
+                .addField(":beginner: Highest Role", highestRole, true)
+                .setThumbnail(avatarUrl)
+                .setColor(PURPLE);
+
+            User executorUser = event.getMessageAuthor().asUser().orElse(null);
+            String executorAvatarUrl = executorUser != null ? executorUser.getAvatar().getUrl().toString() : null;
+            String executorName = executorUser != null ? executorUser.getName() : "Unknown User";
+
+            if (executorAvatarUrl != null) {
+                embed.setFooter("Command executed by " + executorName, executorAvatarUrl);
+            } else {
+                embed.setFooter("Command executed by " + executorName);
+            }
+
             event.getChannel().sendMessage(embed).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
             
         } else {
@@ -127,31 +123,29 @@ public class UserInfoCommand implements MessageCreateListener {
             String userRolesString = "";
 
             for (Role role : userRoles) {
-                if (role.getName() == "@everyone") {
-                    userRoles.remove(role);
-                } else {
-                    userRolesString = userRolesString + role.getMentionTag();
+                if (!role.getName().equals("@everyone")) {
+                    userRolesString = userRolesString + " " + role.getMentionTag();
                 }
             }
 
             if (userRolesString.isEmpty()) {
-                event.getChannel().sendMessage("User doesn't have any role").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
-                return;
+                userRolesString = "User doesn't have any role";
             }
 
-            User executorUser = event.getMessageAuthor().asUser().orElse(null);
-            String executorAvatarUrl = executorUser != null ? executorUser.getAvatar().getUrl().toString() : null;
-
             EmbedBuilder embed = new EmbedBuilder()
-                .setTitle(displayName + "'s roles")
+                .setTitle(":beginner: " + displayName + "'s roles")
                 .setDescription(userRolesString)
-                .setImage(avatarUrl)
+                .setThumbnail(avatarUrl)
                 .setColor(PURPLE);
             
+            User executorUser = event.getMessageAuthor().asUser().orElse(null);
+            String executorAvatarUrl = executorUser != null ? executorUser.getAvatar().getUrl().toString() : null;
+            String executorName = executorUser != null ? executorUser.getName() : "Unknown User";
+
             if (executorAvatarUrl != null) {
-                embed.setFooter("Command executed by" + executor, executorAvatarUrl);
+                embed.setFooter("Command executed by " + executorName, executorAvatarUrl);
             } else {
-                embed.setFooter("Command executed by" + executor);
+                embed.setFooter("Command executed by " + executorName);
             }
             
             event.getChannel().sendMessage(embed).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
