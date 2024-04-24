@@ -28,13 +28,16 @@ public class Main {
     public static String BOT_TOKEN;
 
     public static void main(String[] args) {
-        
+        logger.info("Starting bot...");
+
         Properties prop = new Properties();
         try (InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties")) {
+            logger.info("Parsing token from config.properties...");
             prop.load(input);
             BOT_TOKEN = prop.getProperty("BOT_TOKEN");
         } catch (IOException e) {
             e.printStackTrace();
+            logger.fatal("Error while trying to read config.properties file.");
         }
 
         if (BOT_TOKEN == null) {
@@ -42,6 +45,7 @@ public class Main {
             return;
         }
 
+        logger.info("Connecting to Discord...");
         DiscordApi api = new DiscordApiBuilder().setToken(BOT_TOKEN).setAllIntents().login().join();
         
         Collection<Server> guilds = api.getServers();
@@ -52,6 +56,7 @@ public class Main {
         logger.info("Currently in " + guilds.size() + " guild(s): " + guilds);
         
         // RNG Commands
+        logger.info("Loading commands...");
         api.addMessageCreateListener(new ChoiceCommand());
         api.addMessageCreateListener(new DiceCommand());
         api.addMessageCreateListener(new JankenponCommand());
@@ -71,6 +76,8 @@ public class Main {
         api.addMessageCreateListener(new PollCommand());
         api.addMessageCreateListener(new ShortenCommand());
         //todo Wheater Command, Time Command, Translate Command and more
+
+        logger.info("Bot loaded successfully!");
     }
 
     public static boolean parseCommand(String[] aliases, String commandExecuted) {
