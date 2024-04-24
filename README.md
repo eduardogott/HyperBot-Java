@@ -39,4 +39,5 @@ Run it using executing run.sh or running `mvn exec:java` on terminal
 > Not tested on Linux, WSL nor MacOS.
 ### Contribution
 `Can I contribute with the project?`
+
 **Absolutely!** You are invited to contribute and have your name in the contributors below! Feel free to fork it and do your changes, as well as PRs!
