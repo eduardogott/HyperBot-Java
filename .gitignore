@@ -1,4 +1,4 @@
-logs/
+logs/*
 target/
 run.bat
 pom.xml.tag
