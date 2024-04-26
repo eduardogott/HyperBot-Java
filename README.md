@@ -23,7 +23,7 @@ Example (config.properties):
 ```properties
 BOT_TOKEN=example.token-here_f2a299bca24926
 ```
-5. You can then get the invite either running the bot and copying it from info.txt in [logs](./src/logs) or going in OAuth2 in the applications portal, marking "bot" and below marking the wanted permissions (usually, Administrator).
+5. You can then get the invite either running the bot and copying it from info.txt in [logs](./src/logs), ~~running the bot with `--invite`~~ or going in OAuth2 in the applications portal, marking "bot" and below marking the wanted permissions (usually, Administrator).
 
 > [!CAUTION]
 > Do NOT share your token with anyone, nor upload it to GitHub or repl.it. ANYONE with your token can run the bot in your place, as well as edit it's properties.
@@ -31,13 +31,14 @@ BOT_TOKEN=example.token-here_f2a299bca24926
 
 ### Running
 #### Windows
-Run it using executing run.bat or running `mvn exec:java` on cmd
+Run it using executing run.bat or running `mvn exec:java -e` on cmd.
+> [!INFO] if you want the log messages to be color coded in the console, you have to run it with `-DLOG4J_SKIP_JANSI=false`!
 #### Linux/macOS/WSL
-Run it using executing run.sh or running `mvn exec:java` on terminal
+~~Run it using executing run.sh or running `mvn exec:java -e` on terminal.~~
 
 > [!WARNING]
 > Not tested on Linux, WSL nor MacOS.
 ### Contribution
 `Can I contribute with the project?`
 
-**Absolutely!** You are invited to contribute and have your name in the contributors below! Feel free to fork it and do your changes, as well as PRs!
+**Absolutely!** You are invited to contribute and have your name in the contributors below! Feel free to work on it the way you want, as it is under [MIT License](./LICENSE).
