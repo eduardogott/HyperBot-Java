@@ -1,10 +1,14 @@
 # JHyperBot (Pre-Alpha)
-JHyperBot is a Discord Bot firstly written by [me](github.com/eduardogott/) in Python, now being ported to Java. It's goal is to have the maximum amount of useful and 4fun commands, while still retaining it's simplicity and beauty.
-> For a list of commands and features, head to [COMMANDS](COMMANDS.MD) 
+JHyperBot is a Discord Bot firstly written by [me](github.com/eduardogott/) in Python, now being ported to Java using [Javacord](https://github.com/Javacord/Javacord). It's goal is to have the maximum amount of useful and 4fun commands, while still retaining it's simplicity and beauty.
+> For a list of commands and features, head to [COMMANDS](COMMANDS.MD)
+
+> [!INFO]
+> In the bot's current state, it shall only run in ONE guild per instance (token). If it runs in more than one, features WILL glitch.
 
 ## Contents
 - [Configuration](#configuration)
 - [Running](#running)
+- [Observations](#observations)
 - [Contribution](#contribution)
 
 ## Usage
@@ -38,6 +42,12 @@ Run it using executing run.bat or running `mvn exec:java -e` on cmd.
 
 > [!WARNING]
 > Not tested on Linux, WSL nor MacOS.
+
+### Observations
+Slash commands are NOT yet implemented, and there are no plans to implement it until the port and commands to be added ([here](./progress.md)) are done.
+
+The bot's default prefix is `!`, but it can be changed on [Main](./src/main/java/me/eduardogottert/Main.java).
+
 ### Contribution
 `Can I contribute with the project?`
 
