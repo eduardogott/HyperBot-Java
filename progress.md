@@ -47,6 +47,12 @@ No commands yet - Implement some commands in dm
 !leaderboard - Displays the leaderboard
 !expadmin - Manages somebody's exp
 
+### utils.py
+!remindme - Sets a reminder
+> !weather - duh
+> !time - duh
+> !translate - duh
+
 ### moderation.py
 !ticketban - Forbids someone of creating tickets
 !unticketban - Removes the ticket prohibiton
@@ -73,6 +79,7 @@ No commands yet - Implement some commands in dm
 > !clearallwarnings - Clears all warnings in the guild
 > !clearallticketbans - Clears all ticketsbans in the guild
 > !clearallpunishments - Clears all punishments in the guild (i.e. executes the last 4 commands)
+> !punish - Set punishments with set times and reincidence rules
 
 ### music.py
 #### Setup
