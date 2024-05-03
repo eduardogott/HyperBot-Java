@@ -73,9 +73,9 @@ public class AvatarCommand implements MessageCreateListener {
         String executorAvatarUrl = executorUser != null ? executorUser.getAvatar().getUrl().toString() : null;
                 
         if (executorAvatarUrl != null) {
-            embed.setFooter("Command executed by" + executor, executorAvatarUrl);
+            embed.setFooter("Command executed by " + executor, executorAvatarUrl);
         } else {
-            embed.setFooter("Command executed by" + executor);
+            embed.setFooter("Command executed by " + executor);
         }
             
         event.getChannel().sendMessage(embed);

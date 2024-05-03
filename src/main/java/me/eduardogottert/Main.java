@@ -14,6 +14,7 @@ import org.javacord.api.entity.server.Server;
 import me.eduardogottert.commands.utils.*;
 import me.eduardogottert.commands.utils.infos.*;
 import me.eduardogottert.commands.utils.rngs.*;
+import me.eduardogottert.commands.moderation.punishments.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -55,29 +56,38 @@ public class Main {
         logger.info(api.createBotInvite(Permissions.fromBitmask(8)));
         logger.info("Currently in " + guilds.size() + " guild(s): " + guilds);
         
-        // RNG Commands
         logger.info("Loading commands...");
-        api.addMessageCreateListener(new ChoiceCommand());
-        api.addMessageCreateListener(new DiceCommand());
-        api.addMessageCreateListener(new JankenponCommand());
-        api.addMessageCreateListener(new RandomCommand());
 
-        // Info Commands
+        //#region Utils
+        // Info Commands 
         api.addMessageCreateListener(new AvatarCommand());
         api.addMessageCreateListener(new GuildBannerCommand());
         api.addMessageCreateListener(new GuildIconCommand());
         api.addMessageCreateListener(new GuildInfoCommand());
         api.addMessageCreateListener(new UserBannerCommand());
         api.addMessageCreateListener(new UserInfoCommand());
-
-        // Utils Commands
+        
+        // RNG Commands
+        api.addMessageCreateListener(new ChoiceCommand());
+        api.addMessageCreateListener(new DiceCommand());
+        api.addMessageCreateListener(new JankenponCommand());
+        api.addMessageCreateListener(new RandomCommand());
+        
+        // Other Utils Commands
         api.addMessageCreateListener(new AboutCommand());
         api.addMessageCreateListener(new PingCommand());
         api.addMessageCreateListener(new PollCommand());
+        api.addMessageCreateListener(new SayCommand());
         api.addMessageCreateListener(new ShortenCommand());
         //todo Wheater Command, Time Command, Translate Command and more
+        //#endregion
+        
+        //#region Moderation
+        api.addMessageCreateListener(new BanCommand());
+        api.addMessageCreateListener(new KickCommand());
+        //#endregion
 
-        logger.info("Bot loaded successfully!");
+        logger.info("Bot loaded successfully! (" + api.getMessageCreateListeners().size() + " commands loaded).");
     }
 
     public static boolean parseCommand(String[] aliases, String commandExecuted) {
