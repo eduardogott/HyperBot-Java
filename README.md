@@ -37,7 +37,7 @@ BOT_TOKEN=example.token-here_f2a299bca24926
 #### Windows
 Run it using executing run.bat or running `mvn exec:java -e` on cmd.
 > [!NOTE]
-> if you want the log messages to be color coded in the console, you have to run it with `-DLOG4J_SKIP_JANSI=false`!
+> If you want the log messages to be color coded in the console, you might need to run it with `-DLOG4J_SKIP_JANSI=false`!
 #### Linux/macOS/WSL
 ~~Run it using executing run.sh or running `mvn exec:java -e` on terminal.~~
 
