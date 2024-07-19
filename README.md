@@ -2,7 +2,7 @@
 JHyperBot is a Discord Bot firstly written by [me](github.com/eduardogott/) in Python, now being written in Java using [Javacord](https://github.com/Javacord/Javacord). It's goal is to have the maximum amount of useful and 4fun commands, while still retaining it's simplicity and beauty.
 > For a list of commands and features, head to [COMMANDS](COMMANDS.MD)
 
-> [!INFO]
+> [!NOTE]
 > In the bot's current state, it shall only run in ONE guild per instance (token). If it runs in more than one, features WILL glitch.
 
 ## Contents
@@ -36,7 +36,7 @@ BOT_TOKEN=example.token-here_f2a299bca24926
 ### Running
 #### Windows
 Run it using executing run.bat or running `mvn exec:java -e` on cmd.
-> [!INFO] if you want the log messages to be color coded in the console, you have to run it with `-DLOG4J_SKIP_JANSI=false`!
+> [!NOTE] if you want the log messages to be color coded in the console, you have to run it with `-DLOG4J_SKIP_JANSI=false`!
 #### Linux/macOS/WSL
 ~~Run it using executing run.sh or running `mvn exec:java -e` on terminal.~~
 
