@@ -1,5 +1,5 @@
 # JHyperBot (Pre-Alpha)
-JHyperBot is a Discord Bot firstly written by [me](github.com/eduardogott/) in Python, now being ported to Java using [Javacord](https://github.com/Javacord/Javacord). It's goal is to have the maximum amount of useful and 4fun commands, while still retaining it's simplicity and beauty.
+JHyperBot is a Discord Bot firstly written by [me](github.com/eduardogott/) in Python, now being written in Java using [Javacord](https://github.com/Javacord/Javacord). It's goal is to have the maximum amount of useful and 4fun commands, while still retaining it's simplicity and beauty.
 > For a list of commands and features, head to [COMMANDS](COMMANDS.MD)
 
 > [!INFO]
