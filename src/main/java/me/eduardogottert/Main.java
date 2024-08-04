@@ -23,9 +23,11 @@ import java.util.Collection;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.io.File;
 public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
     public final static String prefix = "!";
+    public static String LANGUAGE_FILE;
     public static String BOT_TOKEN;
 
     public static void main(String[] args) {
@@ -36,6 +38,7 @@ public class Main {
             logger.info("Parsing token from config.properties...");
             prop.load(input);
             BOT_TOKEN = prop.getProperty("BOT_TOKEN");
+            LANGUAGE_FILE = prop.getProperty("LANGUAGE");
         } catch (IOException e) {
             e.printStackTrace();
             logger.fatal("Error while trying to read config.properties file.");
@@ -44,6 +47,21 @@ public class Main {
         if (BOT_TOKEN == null) {
             logger.fatal("BOT_TOKEN is null. Please check your config.properties file.");
             return;
+        }
+
+        if (LANGUAGE_FILE == null) {
+            if (checkForLanguageFile(LANGUAGE_FILE)) {
+                logger.info(LANGUAGE_FILE + " found in resources. Using it.");
+            } else {
+                logger.warn(LANGUAGE_FILE + " not found in resources. Trying to default to messages_default.json (English) instead.");
+                LANGUAGE_FILE = "messages_default.json";
+                if (checkForLanguageFile(LANGUAGE_FILE)) {
+                    logger.info(LANGUAGE_FILE + " found in resources. Using it.");
+                } else {
+                    logger.fatal(LANGUAGE_FILE + " not found in resources. Please check your config.properties file and/or reinstall the messages_default.json file.");
+                    return;
+                }
+            }
         }
 
         logger.info("Connecting to Discord...");
@@ -80,6 +98,7 @@ public class Main {
         api.addMessageCreateListener(new SayCommand());
         api.addMessageCreateListener(new ShortenCommand());
         //todo Wheater Command, Time Command, Translate Command and more
+        //todo idea: Add gui screen for first time setup
         //#endregion
         
         //#region Moderation
@@ -100,6 +119,14 @@ public class Main {
              (!isCommand && commandExecuted.equalsIgnoreCase(element))) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    private static boolean checkForLanguageFile(String file) {
+        File languageFile = new File("../resources/" + LANGUAGE_FILE);
+        if (languageFile.exists()) {
+            return true;
         }
         return false;
     }
