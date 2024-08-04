@@ -185,3 +185,7 @@ No commands yet - Implement some commands in dm
 ### Others
 > !changelog - Lists bot changelol (duh)
 > !channels - Remove or add channels in which bot commands will be listened
+
+### PIX payments
+### Forms
+### Valorant info
