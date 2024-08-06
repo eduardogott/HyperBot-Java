@@ -56,7 +56,7 @@ Run it using executing [run.bat](run.bat) or running `mvn exec:java -e` on cmd.
 ### Observations
 Slash commands are NOT yet implemented, and there are no plans to implement it until the port and commands to be added ([here](./progress.md)) are done.
 
-The bot's default prefix is `!`, but it can be changed on config.properties. Add a field called PREFIX, with the wanted prefix. Example: `PREFIX="!"`
+The bot's default prefix is `!`, but it can be changed on config.properties. Add a field called PREFIX, with the wanted prefix. Example: `PREFIX="!"`. Prefix can be a list (`PREFIX=["!","."]`), and so every string will be considered as a prefix.
 
 ### Contribution
 `Can I contribute with the project?`
