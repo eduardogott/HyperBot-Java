@@ -97,7 +97,7 @@ public class GuildInfoCommand implements MessageCreateListener {
                 .addField(":id: ID", Markdown.code(guildId), true)
                 .addField(":crown: Owner", Markdown.code(guildOwner), true)
                 .addField(":earth_americas: Region", guildRegion, true)
-                .addField(":sparkles :" + guildBoostCount + " Boosters", Markdown.bold("Level: ") + guildBoostLevelString, true)
+                .addField(":sparkles: " + guildBoostCount + " Boosters", Markdown.bold("Level: ") + guildBoostLevelString, true)
                 .addField(":speech_balloon: " + guildChannels + " Channels", Markdown.bold("Voice: ") + guildVoiceChannels + "\n" + Markdown.bold("Text: ") + guildTextChannels + "" , true)
                 .addField(":busts_in_silhouette: " + guildMembers + " Members", Markdown.bold("Online: ") + guildOnlineMembers + "\n" + Markdown.bold("Offline: ") + guildOfflineMembers + "", true)
                 .addField(":shield: " + String.valueOf(guildRoles) + " Roles", Markdown.bold("Highest: ") + String.valueOf(highestRole), true)

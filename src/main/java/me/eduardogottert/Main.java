@@ -2,6 +2,7 @@
 // TODO do something with "igdb", "open weather api" and "fx rates"
 // TODO make so all of the embeds' footer containing "executed by" have that mini picture of the executor user
 // TODO uma roleta tipo wheel of names
+// TODO language_files
 
 //
 package me.eduardogottert;
@@ -10,6 +11,8 @@ import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.permission.Permissions;
 import org.javacord.api.entity.server.Server;
+import org.javacord.api.entity.message.Message;
+import org.javacord.api.util.logging.ExceptionLogger;
 
 import me.eduardogottert.commands.utils.*;
 import me.eduardogottert.commands.utils.infos.*;
@@ -20,10 +23,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Collection;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+//import java.io.IOException;
+//import java.io.InputStream;
+//import java.util.Properties;
+//import java.io.File;
+
 public class Main {
     private static Logger logger = LogManager.getLogger(Main.class);
     public final static String prefix = "!";
@@ -33,7 +40,7 @@ public class Main {
     public static void main(String[] args) {
         logger.info("Starting bot...");
 
-        Properties prop = new Properties();
+        /*Properties prop = new Properties();
         try (InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties")) {
             logger.info("Parsing token from config.properties...");
             prop.load(input);
@@ -62,7 +69,7 @@ public class Main {
                     return;
                 }
             }
-        }
+        }*/
 
         logger.info("Connecting to Discord...");
         DiscordApi api = new DiscordApiBuilder().setToken(BOT_TOKEN).setAllIntents().login().join();
@@ -123,11 +130,176 @@ public class Main {
         return false;
     }
 
-    private static boolean checkForLanguageFile(String file) {
+    /*private static boolean checkForLanguageFile(String file) {
         File languageFile = new File("../resources/" + LANGUAGE_FILE);
         if (languageFile.exists()) {
             return true;
         }
         return false;
+    }*/
+
+    public static long parseTime(String time) {
+        String regex = "(\\d+)([ms|s|m|h|d|w|mo|y])";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(time);
+
+        if (!matcher.matches()) {
+            return -1;
+        }
+
+        String number = matcher.group(1);
+        String timeUnit = matcher.group(2);
+
+        if (number == null || timeUnit == null) {
+            return -1;
+        }
+
+        long delay = Long.parseLong(number);
+
+        if (delay < 0) {
+            return -1;
+        }
+
+        delay = multiplyTime(delay, timeUnit);
+
+        return delay;
+    }
+
+    public static long parseTime(String time, String returnUnit) {
+        String regex = "(\\d+)([ms|s|m|h|d|w|mo|y])";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(time);
+
+        if (!matcher.matches()) {
+            return -1;
+        }
+
+        String number = matcher.group(1);
+        String timeUnit = matcher.group(2);
+
+        if (number == null || timeUnit == null) {
+            return -1;
+        }
+
+        long delay = Long.parseLong(number);
+
+        if (delay < 0) {
+            return -1;
+        }
+
+        delay = multiplyTime(delay, timeUnit);
+
+        switch (returnUnit.toLowerCase()) {
+            case "ms":
+            case "milliseconds":
+                break;
+            case "s":
+            case "seconds":
+                delay /= 1000L;
+                break;
+            case "m":
+            case "minutes":
+                delay /= 60000L; // 1000 * 60
+                break;
+            case "h":
+            case "hours":
+                delay /= 3600000L; // 1000 * 60 * 60
+                break;
+            case "d":
+            case "days":
+                delay /= 86400000L; // 1000 * 60 * 60 * 24
+                break;
+            case "w":
+            case "weeks":
+                delay /= 604800000L; // 1000 * 60 * 60 * 24 * 7
+                break;
+            case "mo":
+            case "months":
+                delay /= 2628000000L; // 1000 * 60 * 60 * 24 * 30
+                break;
+            case "y":
+            case "years":
+                delay /= 31536000000L; // 1000 * 60 * 60 * 24 * 365
+                break;
+            default:
+                break;
+        }
+
+        return delay;
+    }
+
+    public static long multiplyTime(long delay, String timeUnit) {
+        switch (timeUnit.toLowerCase()) {
+            case "ms":
+                break;
+            case "s":
+                delay *= 1000L;
+                break;
+            case "m":
+                delay *= 60000L; // 1000 * 60
+                break;
+            case "h":
+                delay *= 3600000L; // 1000 * 60 * 60
+                break;
+            case "d":
+                delay *= 86400000L; // 1000 * 60 * 60 * 24
+                break;
+            case "w":
+                delay *= 604800000L; // 1000 * 60 * 60 * 24 * 7
+                break;
+            case "mo":
+                delay *= 2628000000L; // 1000 * 60 * 60 * 24 * 30
+                break;
+            case "y":
+                delay *= 31536000000L; // 1000 * 60 * 60 * 24 * 365
+                break;
+            default:
+                break;
+        }
+
+        return delay;
+    }
+
+    public static void deleteAfter(Message message, int delay, String timeUnit) {
+        String messageContent = message.getContent();
+        String messageAuthor = message.getAuthor().getName();
+        long messageAuthorId = message.getAuthor().getId();
+        String messageChannel = message.getChannel().asServerTextChannel().isPresent() ? message.getChannel().asServerTextChannel().get().getName() : "DMs";
+
+        String messageDeleteLogText = "Message '" + messageContent + "' by " + messageAuthor + " (" + messageAuthorId + ") at #" + messageChannel + ".";
+
+        switch (timeUnit.toLowerCase()) {
+            case "milliseconds":
+            case "ms":               
+                break;
+            case "seconds":
+            case "s":
+                delay *= 1000;
+                break;
+            case "minutes":
+            case "m":
+                delay *= 60000;
+                break;
+            case "hours":
+            case "h":
+                delay *= 3600000;
+                break;
+            default:
+                break;
+        }
+
+        if (timeUnit.equalsIgnoreCase("seconds")) {
+            delay *= 1000;
+        }
+
+        try {
+            Thread.sleep(delay);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            logger.warn("Failed to delete message (deleteAfter). (" + messageDeleteLogText + ")");
+        }
+        
+        message.delete("Message deleted after " + delay + " " + timeUnit + " of being sent.").exceptionally(ExceptionLogger.get());
+        logger.info("Deleted message (" + messageDeleteLogText + ").");
     }
 }

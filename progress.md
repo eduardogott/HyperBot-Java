@@ -56,13 +56,9 @@ No commands yet - Implement some commands in dm
 ### moderation.py
 !ticketban - Forbids someone of creating tickets
 !unticketban - Removes the ticket prohibiton
-!ban - Bans someone from the guild
 !unban - Unbans someone from the guild
 !timeout - Timeout someone on the guild
 !untimeout - Untimeout someone on the guild
-!kick - Kicks someone from the guild
-!clear - Clears the chat
-!slowmode - Applies a slowmode to the chat
 !setnickname - Sets a user's nickname/display name
 !history - Checks the punishment history for someone
 !staffhistory - Checks the punishments applied by someone
@@ -181,6 +177,7 @@ No commands yet - Implement some commands in dm
 !tremove - Removes someone from a ticket
 !trename - Renames a ticket
 !ttranscript - Transcripts a ticket
+> Put a status on ticket closure, that gets sent to the openers' DM, stating what was the action taken by the staff.
 
 ### Others
 > !changelog - Lists bot changelol (duh)
@@ -189,3 +186,5 @@ No commands yet - Implement some commands in dm
 ### PIX payments
 ### Forms
 ### Valorant info
+### Bate ponto
+### Captcha/verification/etc    

@@ -8,7 +8,7 @@ import org.javacord.api.listener.message.MessageCreateListener;
 import org.javacord.api.util.logging.ExceptionLogger;
 import org.javacord.api.entity.message.MessageSet;
 import org.javacord.api.entity.channel.TextChannel;
-
+import org.javacord.api.entity.message.Message;
 import me.eduardogottert.Main;
 
 public class ClearCommand implements MessageCreateListener {
@@ -35,7 +35,7 @@ public class ClearCommand implements MessageCreateListener {
         final String reason;
 
         if (splitCommand.length < 2) {
-            event.getChannel().sendMessage(usage);
+            event.getChannel().sendMessage(usage).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
             return;
         } else if (splitCommand.length < 3) {
             reason = "Reason not specified";
@@ -47,7 +47,7 @@ public class ClearCommand implements MessageCreateListener {
             amount = Integer.parseInt(splitCommand[1]);
         } catch (Exception e) {
             e.printStackTrace();
-            event.getChannel().sendMessage("You didn't specify the amount of messages to be deleted. Perhaps it is not an integer.\n" + usage);
+            event.getChannel().sendMessage("You didn't specify the amount of messages to be deleted. Perhaps it is not an integer.\n" + usage).exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
             return;
         }
 
@@ -57,7 +57,7 @@ public class ClearCommand implements MessageCreateListener {
         }
 
         if (channelToClear == null) {
-            event.getChannel().sendMessage("Couldn't find the channel to delete messages! Perhaps you are in a DM?");
+            event.getChannel().sendMessage("Couldn't find the channel to delete messages! Perhaps you are in a DM?").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
             return;
         }
 
@@ -66,23 +66,28 @@ public class ClearCommand implements MessageCreateListener {
             messagesToDelete = channelToClear.getMessages(amount).get();
         } catch (Exception e) {
             e.printStackTrace();
-            event.getChannel().sendMessage("Couldn't delete the messages.");
+            event.getChannel().sendMessage("Couldn't delete the messages.").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
             logger.error("Couldn't delete messages.");
             return;
         }
 
         try {
-            channelToClear.bulkDelete(messagesToDelete).get();
+            for (Message messageToDelete : messagesToDelete) {
+                messageToDelete.delete("Bulk deleted by " + executor + " for " + reason).exceptionally(ExceptionLogger.get());
+            }
         } catch (Exception e) {
-            event.getChannel().sendMessage("Couldn't delete all messages. Perhaps some are older than two weeks.");
+            event.getChannel().sendMessage("Couldn't delete all messages. Perhaps some are older than two weeks.").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
             return;
         }
 
+        Message message;
         if (capped == false) {
-            event.getChannel().sendMessage("Deleted " + amount + " messages.");
-            // TODO add a deleteafter
+            message = event.getChannel().sendMessage("Deleted " + amount + " messages.").exceptionally(ExceptionLogger.get(MissingPermissionsException.class)).join();
+            
         } else {
-            event.getChannel().sendMessage("Deleted 100 messages. Capped due to Discord limitations.");
+            message = event.getChannel().sendMessage("Deleted 100 messages. Capped due to Discord limitations.").exceptionally(ExceptionLogger.get(MissingPermissionsException.class)).join();
         }
+
+        Main.deleteAfter(message, 5000, "milliseconds");
     }
 }

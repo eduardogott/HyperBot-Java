@@ -11,6 +11,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import java.util.HashMap;
@@ -61,7 +63,8 @@ public class ShortenCommand implements MessageCreateListener {
         String tinyUrl = "https://tinyurl.com/api-create.php?url=" + url;
 
         try {
-            URL apiURL = new URL(tinyUrl);
+            URI apiURI = new URI(tinyUrl);
+            URL apiURL = apiURI.toURL();
             HttpURLConnection connection = (HttpURLConnection) apiURL.openConnection();
             connection.setRequestMethod("GET");
 
@@ -77,8 +80,10 @@ public class ShortenCommand implements MessageCreateListener {
             }
         } catch (IOException e) {
             event.getChannel().sendMessage("Failed to connect to the TinyURL API").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+        } catch (URISyntaxException e) {
+            event.getChannel().sendMessage("Unable to shorten the URL. May be due to an malformed URL.").exceptionally(ExceptionLogger.get(MissingPermissionsException.class));
+            System.err.println("URISyntaxException: " + e.getMessage());
         }
-
         userLastCommandTime.put(event.getMessageAuthor().getId(), System.currentTimeMillis());
     }
 }
